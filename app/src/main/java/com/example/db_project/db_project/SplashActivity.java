@@ -24,7 +24,7 @@ public class SplashActivity extends Activity {
 
         @Override
         public void run() {
-            startActivity(new Intent(getApplication(), MainActivity.class));
+            startActivity(new Intent(getApplication(), SurveyActivity.class));
             SplashActivity.this.finish();
         }
     }
