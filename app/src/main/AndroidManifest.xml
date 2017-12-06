@@ -20,6 +20,7 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".FirstTimeActivity"/>
         <activity android:name=".SurveyActivity"/>
     </application>
 
