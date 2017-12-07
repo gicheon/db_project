@@ -17,7 +17,7 @@ import android.widget.TextView;
 
 public class SurveyActivity extends AppCompatActivity{
 
-    public static int ratingCount = 0;
+    public int ratingCount = 0;
     public Button finish_btn;
 
     @Override
@@ -26,7 +26,7 @@ public class SurveyActivity extends AppCompatActivity{
         setContentView(R.layout.activity_survey);
 
         finish_btn = (Button)findViewById(R.id.finish_btn);
-        finish_btn.setTextSize(15);
+        finish_btn.setTextSize(20);
 
         final TextView tv = (TextView)findViewById(R.id.foodcount);
         tv.setText(Integer.toString(ratingCount));
