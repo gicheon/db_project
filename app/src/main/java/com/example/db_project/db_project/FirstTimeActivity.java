@@ -8,8 +8,8 @@ import android.widget.Button;
 
 public class FirstTimeActivity extends AppCompatActivity{
 
-    //public Button btn1;
-    //public Button btn2;
+    public Button btn1;
+    public Button btn2;
 
 
     @Override
@@ -18,11 +18,13 @@ public class FirstTimeActivity extends AppCompatActivity{
         setContentView(R.layout.activity_firsttime);
 
         // btn1 : 나중에 할게요 btn2 : 좋아요
-        Button btn1 = (Button)findViewById(R.id.button1);
-        Button btn2 = (Button)findViewById(R.id.button2);
+        btn1 = (Button)findViewById(R.id.button1);
+        btn2 = (Button)findViewById(R.id.button2);
         setup_ui();
 
-        btn1.setOnClickListener(
+
+        // survey activity start !
+        btn2.setOnClickListener(
                 new Button.OnClickListener(){
                     public void onClick(View v) {
                         Intent intent1 = new Intent(v.getContext(), SurveyActivity.class);
@@ -33,10 +35,8 @@ public class FirstTimeActivity extends AppCompatActivity{
     }
 
 
-
     private void setup_ui(){
-        //btn1.setTextSize(20);
-        //btn2.setTextSize(20);
-
+        btn1.setTextSize(15);
+        btn2.setTextSize(15);
     }
 }
