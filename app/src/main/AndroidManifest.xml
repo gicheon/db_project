@@ -22,6 +22,8 @@
 
         <activity android:name=".FirstTimeActivity"/>
         <activity android:name=".SurveyActivity"/>
+        <activity android:name=".HomeActivity"/>
+
     </application>
 
 </manifest>
