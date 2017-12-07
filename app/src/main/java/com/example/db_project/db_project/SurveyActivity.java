@@ -15,7 +15,7 @@ import android.widget.TextView;
  * Created by gicheonkang on 2017. 12. 7..
  */
 
-public class SurveyActivity extends Activity{
+public class SurveyActivity extends AppCompatActivity{
 
 
     @Override
