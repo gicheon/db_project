@@ -34,6 +34,13 @@ public class SurveyActivity extends AppCompatActivity{
         RatingBar rb2 = (RatingBar)findViewById(R.id.ratingbar2);
         RatingBar rb3 = (RatingBar)findViewById(R.id.ratingbar3);
         RatingBar rb4 = (RatingBar)findViewById(R.id.ratingbar4);
+        RatingBar rb5 = (RatingBar)findViewById(R.id.ratingbar5);
+        RatingBar rb6 = (RatingBar)findViewById(R.id.ratingbar6);
+        RatingBar rb7 = (RatingBar)findViewById(R.id.ratingbar7);
+        RatingBar rb8 = (RatingBar)findViewById(R.id.ratingbar8);
+        RatingBar rb9 = (RatingBar)findViewById(R.id.ratingbar9);
+        RatingBar rb10 = (RatingBar)findViewById(R.id.ratingbar10);
+
 
 
         rb1.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
@@ -72,6 +79,54 @@ public class SurveyActivity extends AppCompatActivity{
             }
         });
 
+        rb5.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating,
+                                        boolean fromUser) {
+                ratingCount++;
+                tv.setText(Integer.toString(ratingCount));
+            }
+        });
+        rb6.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating,
+                                        boolean fromUser) {
+                ratingCount++;
+                tv.setText(Integer.toString(ratingCount));
+            }
+        });
+        rb7.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating,
+                                        boolean fromUser) {
+                ratingCount++;
+                tv.setText(Integer.toString(ratingCount));
+            }
+        });
+        rb8.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating,
+                                        boolean fromUser) {
+                ratingCount++;
+                tv.setText(Integer.toString(ratingCount));
+            }
+        });
+        rb9.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating,
+                                        boolean fromUser) {
+                ratingCount++;
+                tv.setText(Integer.toString(ratingCount));
+            }
+        });
+        rb10.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating,
+                                        boolean fromUser) {
+                ratingCount++;
+                tv.setText(Integer.toString(ratingCount));
+            }
+        });
 
         // survey activity start !
         finish_btn.setOnClickListener(

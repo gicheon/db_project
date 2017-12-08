@@ -23,6 +23,7 @@
         <activity android:name=".FirstTimeActivity"/>
         <activity android:name=".SurveyActivity"/>
         <activity android:name=".HomeActivity"/>
+        <activity android:name=".FriendsActivity"/>
 
     </application>
 
