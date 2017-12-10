@@ -1,6 +1,7 @@
 package com.example.db_project.db_project;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
@@ -23,8 +24,9 @@ import java.util.ArrayList;
 
 public class HomeActivity extends AppCompatActivity {
 
-    SQLiteDatabase sqliteDB;
-    DBManager DBMgr;
+    public SQLiteDatabase sqliteDB;
+    public DBManager DBMgr;
+    public ArrayList<recommendMenuColumn> recommendSqlResult;
 
 
     @Override
@@ -33,35 +35,70 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         //EditText testTxt = (EditText)findViewById(R.id.editText);
+        //testTxt.setText("id: " + ratings.get(5).id + " ratings: " +ratings.get(5).score);
+
         ImageButton friends_btn = (ImageButton)findViewById(R.id.imageButton5);
         ImageView recommend1_type_image = (ImageView)findViewById(R.id.recommend_type_image1);
         ImageView recommend2_type_image = (ImageView)findViewById(R.id.recommend_type_image2);
+        ImageView recommend3_type_image = (ImageView)findViewById(R.id.recommend_type_image3);
+
+
+        TextView recommend_title_text1 = (TextView)findViewById(R.id.recommend_title_text1);
+        TextView recommend_title_text2 = (TextView)findViewById(R.id.recommend_title_text2);
+        TextView recommend_title_text3 = (TextView)findViewById(R.id.recommend_title_text3);
+
+        TextView recommend_menu_text1 = (TextView)findViewById(R.id.recommend_menu_text1);
+        TextView recommend_menu_text2 = (TextView)findViewById(R.id.recommend_menu_text2);
+        TextView recommend_menu_text3 = (TextView)findViewById(R.id.recommend_menu_text3);
+
+
+        recommend_title_text1.setTypeface(null, Typeface.BOLD);
+        recommend_title_text2.setTypeface(null, Typeface.BOLD);
+        recommend_title_text3.setTypeface(null, Typeface.BOLD);
+        recommend_menu_text1.setTypeface(null, Typeface.BOLD);
+        recommend_menu_text2.setTypeface(null, Typeface.BOLD);
+        recommend_menu_text3.setTypeface(null, Typeface.BOLD);
+
+        Button btn7 = (Button)findViewById(R.id.rec_btn1);
+        Button btn8 = (Button)findViewById(R.id.rec_btn2);
+        Button btn9 = (Button)findViewById(R.id.rec_btn3);
+
+        Resources res = getResources();
+        String str_temp = res.getString(R.string.hearts);
+        btn7.setText(str_temp + " 먹고싶어요");
+
+        str_temp = res.getString(R.string.stars);
+        btn8.setText(str_temp+ " 평가하기");
+
+        str_temp = res.getString(R.string.evaluation);
+        btn9.setText(str_temp+ " 코멘트");
 
 
 
-        TextView reccommend1_text1 = (TextView)findViewById(R.id.recommend_title_text1);
-
-        reccommend1_text1.setTypeface(null, Typeface.BOLD);
-        ArrayList<researchColumn> ratings = SurveyActivity.getRatinglist();
+        //ArrayList<researchColumn> ratings = SurveyActivity.getRatinglist();
+        testModule(); // 테스트용 모듈
 
 
+        recommend_title_text1.setText(recommendSqlResult.get(0).getRestaurant());
+        recommend_title_text2.setText(recommendSqlResult.get(1).getRestaurant());
+        recommend_title_text3.setText(recommendSqlResult.get(2).getRestaurant());
+
+        recommend_menu_text1.setText(recommendSqlResult.get(0).getMenu());
+        recommend_menu_text2.setText(recommendSqlResult.get(1).getMenu());
+        recommend_menu_text3.setText(recommendSqlResult.get(2).getMenu());
 
 
+        /*
+        for(int i = 0; i < recommendSqlResult.size(); i++){
+            String res = recommendSqlResult.get(i).getRestaurant() + " "
+                    + recommendSqlResult.get(i).getMenu() + " "
+                    + recommendSqlResult.get(i).getPrice() + " "
+                    + recommendSqlResult.get(i).getCount() + " ";
+        }
+        */
 
 
-        //testTxt.setText("id: " + ratings.get(5).id + " ratings: " +ratings.get(5).score);
-
-
-
-
-
-
-
-
-
-
-        //testModule(); // 테스트용 모듈
-
+        // friends list
         friends_btn.setOnClickListener(
                 new Button.OnClickListener(){
                     public void onClick(View v) {
@@ -72,6 +109,8 @@ public class HomeActivity extends AppCompatActivity {
         );
 
     }
+
+
 
     private void testModule()
     {
@@ -90,15 +129,13 @@ public class HomeActivity extends AppCompatActivity {
         researchColumn b = new researchColumn(4, 2);
         researchColumn c = new researchColumn(3, 3);
 
-        ArrayList<researchColumn> arr = new ArrayList<researchColumn>();
-        arr.add(a);
-        arr.add(b);
-        arr.add(c);
 
+        ArrayList<researchColumn> arr = SurveyActivity.getRatinglist();
         DBMgr.insertResearchResult(arr);
 
         // TEST 설문결과
 
+        /*
         for(int i = 0; i < restaurantSqlResult.size(); i++)
         {
             Log.d("알림", restaurantSqlResult.get(i));
@@ -132,8 +169,13 @@ public class HomeActivity extends AppCompatActivity {
             Log.d("알림", reviewSqlResult.get(i));
         }
 
-        ArrayList<recommendMenuColumn> recommendSqlResult = DBMgr.getRecommendTable();
+        */
 
+        // 맛집 3개 추천 정보
+        recommendSqlResult = DBMgr.getRecommendTable();
+
+
+        /*
         for(int i = 0; i < recommendSqlResult.size(); i++)
         {
             String res = recommendSqlResult.get(i).getRestaurant() + " "
@@ -141,8 +183,13 @@ public class HomeActivity extends AppCompatActivity {
                     + recommendSqlResult.get(i).getPrice() + " "
                     + recommendSqlResult.get(i).getCount() + " ";
 
-            Log.d("알림", res);
+            //Log.d("추천", res);
+
+
+
+
         }
+
 
         ArrayList<String> friendSqlResult = DBMgr.getFriendTable();
 
@@ -162,5 +209,6 @@ public class HomeActivity extends AppCompatActivity {
 
             Log.d("알림", res);
         }
+        */
     }
 }

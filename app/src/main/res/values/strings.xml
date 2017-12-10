@@ -1,3 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">db_project</string>
+    <string name="hearts">&#9825;</string>
+    <string name="stars">&#10025;</string>
+    <string name="evaluation">&#10004;</string>
 </resources>

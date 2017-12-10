@@ -308,7 +308,7 @@ public class DBManager extends SQLiteOpenHelper
 
         int dist = 10;
         int tableSize = 0;
-        final int minTableSize = 5;
+        final int minTableSize = 10;
 
         cursor = db.rawQuery("SELECT * FROM user WHERE id = 1", null);
 
@@ -399,17 +399,17 @@ public class DBManager extends SQLiteOpenHelper
         }
         db.close();
 
-        /*ArrayList<recommendMenuColumn> croppedResult = new ArrayList<recommendMenuColumn>();
-        int[] randSeq = getRandomSequence(tableSize, 5);
+        ArrayList<recommendMenuColumn> croppedResult = new ArrayList<recommendMenuColumn>();
+        int[] randSeq = getRandomSequence(tableSize, 3);
 
-        for(int i = 0; i < 5; i++)
+        for(int i = 0; i < 3; i++)
         {
             croppedResult.add(result.get(randSeq[i]));
         }
 
-        //return croppedResult;*/
+        return croppedResult;
 
-        return result;
+        //return result;
     }
 
     public ArrayList<String> getFriendTable()
@@ -420,7 +420,7 @@ public class DBManager extends SQLiteOpenHelper
 
         int dist = 10;
         int tableSize = 0;
-        final int minTableSize = 3;
+        final int minTableSize = 10;
 
         cursor = db.rawQuery("SELECT * FROM user WHERE id = 1", null);
 
