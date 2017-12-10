@@ -7,18 +7,17 @@
     android:background="@color/colorWhite">
 
 
-    <TextView
-        android:id="@+id/frn_textView_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/apptitle2"
+        android:layout_width="102dp"
+        android:layout_height="45dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="35dp"
-        android:text="밥 같이 먹기 신청"
-        android:textSize="25dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/apptitle" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline3"

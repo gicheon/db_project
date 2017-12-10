@@ -59,7 +59,7 @@ public class SurveyActivity extends AppCompatActivity{
                                         boolean fromUser) {
                 ratingCount++;
                 tv.setText(Integer.toString(ratingCount));
-                ratingList.set(0, new researchColumn(rating, 1));
+                ratingList.set(0, new researchColumn(rating, 151));
             }
         });
 
@@ -69,7 +69,7 @@ public class SurveyActivity extends AppCompatActivity{
                                         boolean fromUser) {
                 ratingCount++;
                 tv.setText(Integer.toString(ratingCount));
-                ratingList.set(1, new researchColumn(rating, 2));
+                ratingList.set(1, new researchColumn(rating, 152));
             }
         });
 
@@ -79,7 +79,7 @@ public class SurveyActivity extends AppCompatActivity{
                                         boolean fromUser) {
                 ratingCount++;
                 tv.setText(Integer.toString(ratingCount));
-                ratingList.set(2, new researchColumn(rating, 3));
+                ratingList.set(2, new researchColumn(rating, 153));
             }
         });
 
@@ -89,7 +89,7 @@ public class SurveyActivity extends AppCompatActivity{
                                         boolean fromUser) {
                 ratingCount++;
                 tv.setText(Integer.toString(ratingCount));
-                ratingList.set(3, new researchColumn(rating, 4));
+                ratingList.set(3, new researchColumn(rating, 154));
             }
         });
 
@@ -99,7 +99,7 @@ public class SurveyActivity extends AppCompatActivity{
                                         boolean fromUser) {
                 ratingCount++;
                 tv.setText(Integer.toString(ratingCount));
-                ratingList.set(4, new researchColumn(rating, 5));
+                ratingList.set(4, new researchColumn(rating, 155));
             }
         });
         rb6.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
@@ -108,7 +108,7 @@ public class SurveyActivity extends AppCompatActivity{
                                         boolean fromUser) {
                 ratingCount++;
                 tv.setText(Integer.toString(ratingCount));
-                ratingList.set(5, new researchColumn(rating, 6));
+                ratingList.set(5, new researchColumn(rating, 156));
 
             }
         });
@@ -118,7 +118,7 @@ public class SurveyActivity extends AppCompatActivity{
                                         boolean fromUser) {
                 ratingCount++;
                 tv.setText(Integer.toString(ratingCount));
-                ratingList.set(6, new researchColumn(rating, 7));
+                ratingList.set(6, new researchColumn(rating, 157));
             }
         });
         rb8.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
@@ -127,7 +127,7 @@ public class SurveyActivity extends AppCompatActivity{
                                         boolean fromUser) {
                 ratingCount++;
                 tv.setText(Integer.toString(ratingCount));
-                ratingList.set(7, new researchColumn(rating, 8));
+                ratingList.set(7, new researchColumn(rating, 158));
             }
         });
         rb9.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
@@ -136,7 +136,7 @@ public class SurveyActivity extends AppCompatActivity{
                                         boolean fromUser) {
                 ratingCount++;
                 tv.setText(Integer.toString(ratingCount));
-                ratingList.set(8, new researchColumn(rating, 9));
+                ratingList.set(8, new researchColumn(rating, 159));
 
             }
         });
@@ -146,7 +146,7 @@ public class SurveyActivity extends AppCompatActivity{
                                         boolean fromUser) {
                 ratingCount++;
                 tv.setText(Integer.toString(ratingCount));
-                ratingList.set(9, new researchColumn(rating, 10));
+                ratingList.set(9, new researchColumn(rating, 160));
 
             }
         });

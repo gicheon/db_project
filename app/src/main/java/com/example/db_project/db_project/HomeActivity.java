@@ -27,6 +27,7 @@ public class HomeActivity extends AppCompatActivity {
     public SQLiteDatabase sqliteDB;
     public DBManager DBMgr;
     public ArrayList<recommendMenuColumn> recommendSqlResult;
+    public static ArrayList<String> friendSqlResult;
 
 
     @Override
@@ -51,6 +52,14 @@ public class HomeActivity extends AppCompatActivity {
         TextView recommend_menu_text2 = (TextView)findViewById(R.id.recommend_menu_text2);
         TextView recommend_menu_text3 = (TextView)findViewById(R.id.recommend_menu_text3);
 
+        TextView rec_price1 = (TextView)findViewById(R.id.rec_price1);
+        TextView rec_price2 = (TextView)findViewById(R.id.rec_price2);
+        TextView rec_price3 = (TextView)findViewById(R.id.rec_price3);
+
+        TextView rec_count1 = (TextView)findViewById(R.id.rec_count1);
+        TextView rec_count2 = (TextView)findViewById(R.id.rec_count2);
+        TextView rec_count3 = (TextView)findViewById(R.id.rec_count3);
+
 
         recommend_title_text1.setTypeface(null, Typeface.BOLD);
         recommend_title_text2.setTypeface(null, Typeface.BOLD);
@@ -59,25 +68,49 @@ public class HomeActivity extends AppCompatActivity {
         recommend_menu_text2.setTypeface(null, Typeface.BOLD);
         recommend_menu_text3.setTypeface(null, Typeface.BOLD);
 
-        Button btn7 = (Button)findViewById(R.id.rec_btn1);
-        Button btn8 = (Button)findViewById(R.id.rec_btn2);
-        Button btn9 = (Button)findViewById(R.id.rec_btn3);
+        Button rec_btn1 = (Button)findViewById(R.id.rec_btn1);
+        Button rec_btn2 = (Button)findViewById(R.id.rec_btn2);
+        Button rec_btn3 = (Button)findViewById(R.id.rec_btn3);
+
+        Button rec_btn4 = (Button)findViewById(R.id.rec_btn4);
+        Button rec_btn5 = (Button)findViewById(R.id.rec_btn5);
+        Button rec_btn6 = (Button)findViewById(R.id.rec_btn6);
+
+        Button rec_btn7 = (Button)findViewById(R.id.rec_btn7);
+        Button rec_btn8 = (Button)findViewById(R.id.rec_btn8);
+        Button rec_btn9 = (Button)findViewById(R.id.rec_btn9);
 
         Resources res = getResources();
         String str_temp = res.getString(R.string.hearts);
-        btn7.setText(str_temp + " 먹고싶어요");
+        rec_btn1.setText(str_temp + " 먹고싶어요");
 
         str_temp = res.getString(R.string.stars);
-        btn8.setText(str_temp+ " 평가하기");
+        rec_btn2.setText(str_temp+ " 평가하기");
 
         str_temp = res.getString(R.string.evaluation);
-        btn9.setText(str_temp+ " 코멘트");
+        rec_btn3.setText(str_temp+ " 코멘트");
 
+        str_temp = res.getString(R.string.hearts);
+        rec_btn4.setText(str_temp + " 먹고싶어요");
+
+        str_temp = res.getString(R.string.stars);
+        rec_btn5.setText(str_temp+ " 평가하기");
+
+        str_temp = res.getString(R.string.evaluation);
+        rec_btn6.setText(str_temp+ " 코멘트");
+
+        str_temp = res.getString(R.string.hearts);
+        rec_btn7.setText(str_temp + " 먹고싶어요");
+
+        str_temp = res.getString(R.string.stars);
+        rec_btn8.setText(str_temp+ " 평가하기");
+
+        str_temp = res.getString(R.string.evaluation);
+        rec_btn9.setText(str_temp+ " 코멘트");
 
 
         //ArrayList<researchColumn> ratings = SurveyActivity.getRatinglist();
         testModule(); // 테스트용 모듈
-
 
         recommend_title_text1.setText(recommendSqlResult.get(0).getRestaurant());
         recommend_title_text2.setText(recommendSqlResult.get(1).getRestaurant());
@@ -87,15 +120,66 @@ public class HomeActivity extends AppCompatActivity {
         recommend_menu_text2.setText(recommendSqlResult.get(1).getMenu());
         recommend_menu_text3.setText(recommendSqlResult.get(2).getMenu());
 
+        rec_price1.setText("가격: "+recommendSqlResult.get(0).getPrice() + "원");
+        rec_price2.setText("가격: "+recommendSqlResult.get(1).getPrice() + "원");
+        rec_price3.setText("가격: "+recommendSqlResult.get(2).getPrice() + "원");
 
-        /*
-        for(int i = 0; i < recommendSqlResult.size(); i++){
-            String res = recommendSqlResult.get(i).getRestaurant() + " "
-                    + recommendSqlResult.get(i).getMenu() + " "
-                    + recommendSqlResult.get(i).getPrice() + " "
-                    + recommendSqlResult.get(i).getCount() + " ";
+        rec_count1.setText("방문횟수: "+recommendSqlResult.get(0).getCount() + "회");
+        rec_count2.setText("방문횟수: "+recommendSqlResult.get(1).getCount() + "회");
+        rec_count3.setText("방문횟수: "+recommendSqlResult.get(2).getCount() + "회");
+
+
+        System.out.println((recommendSqlResult.get(0).getSort()));
+        System.out.println((recommendSqlResult.get(1).getSort()));
+        System.out.println((recommendSqlResult.get(2).getSort()));
+
+
+        String korean = new String("한식");
+        String chinese = new String("중식");
+        String japanese = new String("일식");
+        String western = new String("양식");
+
+
+        if (recommendSqlResult.get(0).getSort().equals(korean)){
+            recommend1_type_image.setImageResource(R.drawable.type_korean);
         }
-        */
+        else if(recommendSqlResult.get(0).getSort().equals(chinese)){
+            recommend1_type_image.setImageResource(R.drawable.type_chinese);
+        }
+        else if(recommendSqlResult.get(0).getSort().equals(western)){
+            recommend1_type_image.setImageResource(R.drawable.type_western);
+        }
+        else{
+            recommend1_type_image.setImageResource(R.drawable.type_japanese);
+        }
+
+        if (recommendSqlResult.get(1).getSort().equals(korean)){
+            recommend2_type_image.setImageResource(R.drawable.type_korean);
+        }
+        else if(recommendSqlResult.get(1).getSort().equals(chinese)){
+            recommend2_type_image.setImageResource(R.drawable.type_chinese);
+        }
+        else if(recommendSqlResult.get(1).getSort().equals(western)){
+            recommend2_type_image.setImageResource(R.drawable.type_western);
+        }
+        else{
+            recommend2_type_image.setImageResource(R.drawable.type_japanese);
+        }
+
+
+        if (recommendSqlResult.get(2).getSort().equals(korean)){
+            recommend3_type_image.setImageResource(R.drawable.type_korean);
+        }
+        else if(recommendSqlResult.get(2).getSort().equals(chinese)){
+            recommend3_type_image.setImageResource(R.drawable.type_chinese);
+        }
+        else if(recommendSqlResult.get(2).getSort().equals(western)){
+            recommend3_type_image.setImageResource(R.drawable.type_western);
+        }
+        else{
+            recommend3_type_image.setImageResource(R.drawable.type_japanese);
+        }
+
 
 
         // friends list
@@ -175,7 +259,7 @@ public class HomeActivity extends AppCompatActivity {
         recommendSqlResult = DBMgr.getRecommendTable();
 
 
-        /*
+
         for(int i = 0; i < recommendSqlResult.size(); i++)
         {
             String res = recommendSqlResult.get(i).getRestaurant() + " "
@@ -184,20 +268,17 @@ public class HomeActivity extends AppCompatActivity {
                     + recommendSqlResult.get(i).getCount() + " ";
 
             //Log.d("추천", res);
-
-
-
-
         }
 
 
-        ArrayList<String> friendSqlResult = DBMgr.getFriendTable();
 
+        friendSqlResult = DBMgr.getFriendTable();
         for(int i = 0; i < friendSqlResult.size(); i++)
         {
             Log.d("알림", friendSqlResult.get(i));
         }
 
+        /*
         ArrayList<sortResultColumn> sortSqlResult = DBMgr.getSortTable("중식");
 
         for(int i = 0; i < sortSqlResult.size(); i++)
@@ -210,5 +291,6 @@ public class HomeActivity extends AppCompatActivity {
             Log.d("알림", res);
         }
         */
+
     }
 }

@@ -58,6 +58,13 @@ public class FriendsActivity extends AppCompatActivity{
         frn6_txt = (TextView)findViewById(R.id.frn_textView6);
         frn7_txt = (TextView)findViewById(R.id.frn_textView7);
 
+        frn1_txt.setText(HomeActivity.friendSqlResult.get(0));
+        frn2_txt.setText(HomeActivity.friendSqlResult.get(1));
+        frn3_txt.setText(HomeActivity.friendSqlResult.get(2));
+        frn4_txt.setText(HomeActivity.friendSqlResult.get(3));
+        frn5_txt.setText(HomeActivity.friendSqlResult.get(4));
+        frn6_txt.setText(HomeActivity.friendSqlResult.get(5));
+        frn7_txt.setText(HomeActivity.friendSqlResult.get(6));
 
         setup_ui();
 
