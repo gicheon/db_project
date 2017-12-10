@@ -2,11 +2,18 @@ package com.example.db_project.db_project;
 
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
+
 import java.util.ArrayList;
 
 
@@ -25,12 +32,24 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        //EditText testTxt = (EditText)findViewById(R.id.editText);
+        ImageButton friends_btn = (ImageButton)findViewById(R.id.imageButton5);
+        ImageView recommend1_type_image = (ImageView)findViewById(R.id.recommend_type_image1);
+        ImageView recommend2_type_image = (ImageView)findViewById(R.id.recommend_type_image2);
 
+
+
+        TextView reccommend1_text1 = (TextView)findViewById(R.id.recommend_title_text1);
+
+        reccommend1_text1.setTypeface(null, Typeface.BOLD);
         ArrayList<researchColumn> ratings = SurveyActivity.getRatinglist();
 
 
 
 
+
+
+        //testTxt.setText("id: " + ratings.get(5).id + " ratings: " +ratings.get(5).score);
 
 
 
@@ -43,7 +62,6 @@ public class HomeActivity extends AppCompatActivity {
 
         //testModule(); // 테스트용 모듈
 
-        Button friends_btn = (Button)findViewById(R.id.friendbtn);
         friends_btn.setOnClickListener(
                 new Button.OnClickListener(){
                     public void onClick(View v) {

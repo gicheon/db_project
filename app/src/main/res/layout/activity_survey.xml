@@ -199,6 +199,7 @@
             android:layout_marginTop="64dp"
             android:gravity="left"
             android:text="짬뽕타임 짬뽕"
+            android:textColor="@color/colorblack"
             android:textSize="20dp"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toTopOf="parent" />
@@ -211,6 +212,7 @@
             android:layout_marginStart="0dp"
             android:layout_marginTop="88dp"
             android:gravity="left"
+            android:textColor="@color/colorblack"
             android:text="경기도 수원시 영통구 아주로 4번길 1 "
             android:textSize="15dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -224,6 +226,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="214dp"
             android:gravity="left"
+            android:textColor="@color/colorblack"
             android:text="본수원 갈비"
             android:textSize="20dp"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
@@ -236,6 +239,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginTop="238dp"
             android:gravity="left"
+            android:textColor="@color/colorblack"
             android:text="경기도 수원시 팔달구 중부대로 224번길"
             android:textSize="15dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -251,6 +255,7 @@
             android:gravity="left"
             android:text="시골집 제육볶음"
             android:textSize="20dp"
+            android:textColor="@color/colorblack"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -262,6 +267,7 @@
             android:layout_marginTop="388dp"
             android:gravity="left"
             android:text="경기도 수원시 영통구 월드컵로 193번길"
+            android:textColor="@color/colorblack"
             android:textSize="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -276,6 +282,7 @@
             android:gravity="left"
             android:text="이모네 손칼국수"
             android:textSize="20dp"
+            android:textColor="@color/colorblack"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -287,6 +294,7 @@
             android:layout_marginTop="538dp"
             android:gravity="left"
             android:text="경기도 수원시 팔달구 중부대로 223번길"
+            android:textColor="@color/colorblack"
             android:textSize="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -302,6 +310,7 @@
             android:gravity="left"
             android:text="만고쿠 연어덮밥"
             android:textSize="20dp"
+            android:textColor="@color/colorblack"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -312,6 +321,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginTop="688dp"
             android:gravity="left"
+            android:textColor="@color/colorblack"
             android:text="경기도 수원시 팔달구 중부대로 223번길"
             android:textSize="15dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -326,6 +336,7 @@
             android:layout_marginTop="814dp"
             android:gravity="left"
             android:text="S POT 샤브샤브"
+            android:textColor="@color/colorblack"
             android:textSize="20dp"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toTopOf="parent" />
@@ -338,6 +349,7 @@
             android:layout_marginTop="838dp"
             android:gravity="left"
             android:text="경기도 수원시 팔달구 중부대로 223번길"
+            android:textColor="@color/colorblack"
             android:textSize="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -353,6 +365,7 @@
             android:gravity="left"
             android:text="미스사이공 쌀국수"
             android:textSize="20dp"
+            android:textColor="@color/colorblack"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -365,6 +378,7 @@
             android:gravity="left"
             android:text="경기도 수원시 팔달구 중부대로 223번길"
             android:textSize="15dp"
+            android:textColor="@color/colorblack"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
@@ -378,6 +392,7 @@
             android:layout_marginTop="1114dp"
             android:gravity="left"
             android:text="맥도날드 빅맥"
+            android:textColor="@color/colorblack"
             android:textSize="20dp"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toTopOf="parent" />
@@ -391,6 +406,7 @@
             android:gravity="left"
             android:text="경기도 수원시 팔달구 중부대로 223번길"
             android:textSize="15dp"
+            android:textColor="@color/colorblack"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
@@ -403,6 +419,7 @@
             android:layout_marginTop="1264dp"
             android:gravity="left"
             android:text="동대문 엽기떡볶이"
+            android:textColor="@color/colorblack"
             android:textSize="20dp"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toTopOf="parent" />
@@ -415,6 +432,7 @@
             android:layout_marginTop="1288dp"
             android:gravity="left"
             android:text="경기도 수원시 팔달구 중부대로 223번길"
+            android:textColor="@color/colorblack"
             android:textSize="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -429,6 +447,7 @@
             android:layout_marginTop="1414dp"
             android:gravity="left"
             android:text="아웃닭 후라이드치킨"
+            android:textColor="@color/colorblack"
             android:textSize="20dp"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toTopOf="parent" />
@@ -441,14 +460,12 @@
             android:layout_marginTop="1438dp"
             android:gravity="left"
             android:text="경기도 수원시 팔달구 중부대로 223번길"
+            android:textColor="@color/colorblack"
             android:textSize="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toTopOf="parent" />
-
-
-
 
 
 

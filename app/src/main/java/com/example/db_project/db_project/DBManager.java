@@ -8,6 +8,7 @@ import android.util.Log;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Random;
 
 // 데이터베이스 매니져 클래스
 public class DBManager extends SQLiteOpenHelper
@@ -332,20 +333,22 @@ public class DBManager extends SQLiteOpenHelper
             cursor = null;
 
             Log.d("디버깅", "sql 발동");
-            cursor = db.rawQuery("SELECT DISTINCT sale.name, menu.name, menu.price, menu.menu_id " +
-                    "FROM sale, menu, user " +
-                    "WHERE " +
-                    "(menu.quantity BETWEEN " + (user.getQuantityPref() - dist) + " AND " + (user.getQuantityPref() + dist) + ")" +
-                    "AND " +
-                    "(menu.spice BETWEEN " + (user.getSpicePref() - dist) + " AND " + (user.getSpicePref() + dist) + ")" +
-                    "AND " +
-                    "(menu.creamy BETWEEN " + (user.getCreamyPref() - dist) + " AND " + (user.getCreamyPref() + dist) + ")" +
-                    "AND " +
-                    "(menu.hot BETWEEN " + (user.getHotPref() - dist) + " AND " + (user.getHotPref() + dist) + ")" +
-                    "AND " +
-                    "(menu.sweet BETWEEN " + (user.getSweetPref() - dist) + " AND " + (user.getSweetPref() + dist) + ")" +
-                    "AND " +
-                    "(menu.menu_id = sale.menu_id)",
+            cursor = db.rawQuery("SELECT DISTINCT sale.name, menu.name, menu.price, menu.menu_id, restaurant.sort " +
+                            "FROM sale, menu, restaurant " +
+                            "WHERE " +
+                            "(menu.quantity BETWEEN " + (user.getQuantityPref() - dist) + " AND " + (user.getQuantityPref() + dist) + ")" +
+                            "AND " +
+                            "(menu.spice BETWEEN " + (user.getSpicePref() - dist) + " AND " + (user.getSpicePref() + dist) + ")" +
+                            "AND " +
+                            "(menu.creamy BETWEEN " + (user.getCreamyPref() - dist) + " AND " + (user.getCreamyPref() + dist) + ")" +
+                            "AND " +
+                            "(menu.hot BETWEEN " + (user.getHotPref() - dist) + " AND " + (user.getHotPref() + dist) + ")" +
+                            "AND " +
+                            "(menu.sweet BETWEEN " + (user.getSweetPref() - dist) + " AND " + (user.getSweetPref() + dist) + ")" +
+                            "AND " +
+                            "(menu.menu_id = sale.menu_id)" +
+                            "AND" +
+                            "(sale.name = restaurant.name)",
                     null);
             Log.d("디버깅", "sql 완료");
 
@@ -356,6 +359,7 @@ public class DBManager extends SQLiteOpenHelper
                 int price = 0;
                 int menu_id = 0;
                 int reviewCount = 0;
+                String sort ="";
 
                 while(cursor.moveToNext())
                 {
@@ -364,6 +368,7 @@ public class DBManager extends SQLiteOpenHelper
                     price = cursor.getInt(2);
 
                     menu_id =  cursor.getInt(3);
+                    sort = cursor.getString(4);
 
                     subCursor = null;
                     subCursor = db.rawQuery("SELECT dining_count FROM review " +
@@ -382,15 +387,28 @@ public class DBManager extends SQLiteOpenHelper
                     }
 
                     recommendMenuColumn col = new recommendMenuColumn(
-                            restaurant, menu, price,  reviewCount);
+                            restaurant, menu, price,  reviewCount, sort);
                     result.add(col);
                 }
+
+                tableSize = cursor.getCount();
                 break;
             }
 
             dist += 5;
         }
         db.close();
+
+        /*ArrayList<recommendMenuColumn> croppedResult = new ArrayList<recommendMenuColumn>();
+        int[] randSeq = getRandomSequence(tableSize, 5);
+
+        for(int i = 0; i < 5; i++)
+        {
+            croppedResult.add(result.get(randSeq[i]));
+        }
+
+        //return croppedResult;*/
+
         return result;
     }
 
@@ -426,7 +444,7 @@ public class DBManager extends SQLiteOpenHelper
         {
             cursor = null;
 
-            Log.d("디버깅", "sql 발동");
+            Log.d("디버깅", "친추 sql 발동");
             cursor = db.rawQuery("SELECT DISTINCT name FROM user WHERE" +
                             "(pref_quantity BETWEEN " + (user.getQuantityPref() - dist) + " AND " + (user.getQuantityPref() + dist) + ")" +
                             "AND " +
@@ -440,7 +458,7 @@ public class DBManager extends SQLiteOpenHelper
                             "AND " +
                             "id != 1",
                     null);
-            Log.d("디버깅", "sql 완료");
+            Log.d("디버깅", "친추 sql 완료");
 
             if(cursor.getCount() >= minTableSize)
             {
@@ -449,12 +467,26 @@ public class DBManager extends SQLiteOpenHelper
                     String res = cursor.getString(0);
                     result.add(res);
                 }
+
+                tableSize = cursor.getCount();
                 break;
             }
 
             dist += 5;
         }
+
         db.close();
+
+        /*ArrayList<String> croppedResult = new ArrayList<String>();
+        int[] randSeq = getRandomSequence(tableSize, 7);
+
+        for(int i = 0; i < 7; i++)
+        {
+            croppedResult.add(result.get(randSeq[i]));
+        }
+
+        return croppedResult;*/
+
         return result;
     }
 
@@ -548,5 +580,32 @@ public class DBManager extends SQLiteOpenHelper
         }
 
         return result;
+    }
+
+    private int[] getRandomSequence(int total, int count)
+    {
+        int[] randomSeq = new int[count];
+        boolean[] rebundCheck = new boolean[total];
+        int finishedNum = 0;
+
+        for(int i = 0; i < count; i++)
+        {
+            rebundCheck[i] = false;
+        }
+
+        for(finishedNum = 0; finishedNum < count;)
+        {
+            Random rand = new Random();
+            int randNum = rand.nextInt(total);
+
+            if(!rebundCheck[randNum])
+            {
+                randomSeq[finishedNum] = randNum;
+                rebundCheck[randNum] = true;
+                finishedNum++;
+            }
+
+        }
+        return randomSeq;
     }
 }
