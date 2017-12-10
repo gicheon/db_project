@@ -1,24 +1,30 @@
 package com.example.db_project.db_project;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
+import java.util.ArrayList;
 
 
 /**
  * Created by gicheonkang on 2017. 12. 7..
  */
 
+
 public class SurveyActivity extends AppCompatActivity{
 
     public int ratingCount = 0;
     public Button finish_btn;
+    public static ArrayList<researchColumn> ratingList = new ArrayList<researchColumn>(10);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +33,7 @@ public class SurveyActivity extends AppCompatActivity{
 
         finish_btn = (Button)findViewById(R.id.finish_btn);
         finish_btn.setTextSize(20);
+
 
         final TextView tv = (TextView)findViewById(R.id.foodcount);
         tv.setText(Integer.toString(ratingCount));
@@ -42,6 +49,9 @@ public class SurveyActivity extends AppCompatActivity{
         RatingBar rb10 = (RatingBar)findViewById(R.id.ratingbar10);
 
 
+        for(int i =0; i<10; i++)
+            ratingList.add(i, new researchColumn(0, i));
+
 
         rb1.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
@@ -49,6 +59,7 @@ public class SurveyActivity extends AppCompatActivity{
                                         boolean fromUser) {
                 ratingCount++;
                 tv.setText(Integer.toString(ratingCount));
+                ratingList.set(0, new researchColumn(rating, 1));
             }
         });
 
@@ -58,6 +69,7 @@ public class SurveyActivity extends AppCompatActivity{
                                         boolean fromUser) {
                 ratingCount++;
                 tv.setText(Integer.toString(ratingCount));
+                ratingList.set(1, new researchColumn(rating, 2));
             }
         });
 
@@ -67,6 +79,7 @@ public class SurveyActivity extends AppCompatActivity{
                                         boolean fromUser) {
                 ratingCount++;
                 tv.setText(Integer.toString(ratingCount));
+                ratingList.set(2, new researchColumn(rating, 3));
             }
         });
 
@@ -76,6 +89,7 @@ public class SurveyActivity extends AppCompatActivity{
                                         boolean fromUser) {
                 ratingCount++;
                 tv.setText(Integer.toString(ratingCount));
+                ratingList.set(3, new researchColumn(rating, 4));
             }
         });
 
@@ -85,6 +99,7 @@ public class SurveyActivity extends AppCompatActivity{
                                         boolean fromUser) {
                 ratingCount++;
                 tv.setText(Integer.toString(ratingCount));
+                ratingList.set(4, new researchColumn(rating, 5));
             }
         });
         rb6.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
@@ -93,6 +108,8 @@ public class SurveyActivity extends AppCompatActivity{
                                         boolean fromUser) {
                 ratingCount++;
                 tv.setText(Integer.toString(ratingCount));
+                ratingList.set(5, new researchColumn(rating, 6));
+
             }
         });
         rb7.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
@@ -101,6 +118,7 @@ public class SurveyActivity extends AppCompatActivity{
                                         boolean fromUser) {
                 ratingCount++;
                 tv.setText(Integer.toString(ratingCount));
+                ratingList.set(6, new researchColumn(rating, 7));
             }
         });
         rb8.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
@@ -109,6 +127,7 @@ public class SurveyActivity extends AppCompatActivity{
                                         boolean fromUser) {
                 ratingCount++;
                 tv.setText(Integer.toString(ratingCount));
+                ratingList.set(7, new researchColumn(rating, 8));
             }
         });
         rb9.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
@@ -117,6 +136,8 @@ public class SurveyActivity extends AppCompatActivity{
                                         boolean fromUser) {
                 ratingCount++;
                 tv.setText(Integer.toString(ratingCount));
+                ratingList.set(8, new researchColumn(rating, 9));
+
             }
         });
         rb10.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
@@ -125,8 +146,11 @@ public class SurveyActivity extends AppCompatActivity{
                                         boolean fromUser) {
                 ratingCount++;
                 tv.setText(Integer.toString(ratingCount));
+                ratingList.set(9, new researchColumn(rating, 10));
+
             }
         });
+
 
         // survey activity start !
         finish_btn.setOnClickListener(
@@ -138,6 +162,9 @@ public class SurveyActivity extends AppCompatActivity{
                 }
         );
 
+    }
 
+    public static ArrayList<researchColumn> getRatinglist(){
+        return ratingList;
     }
 }

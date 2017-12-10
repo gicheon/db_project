@@ -38,4 +38,5 @@ public class FirstTimeActivity extends AppCompatActivity{
         btn1.setTextSize(18);
         btn2.setTextSize(18);
     }
+
 }

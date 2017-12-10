@@ -22,12 +22,17 @@ public class FriendsActivity extends AppCompatActivity{
     Button frn3_btn;
     Button frn4_btn;
     Button frn5_btn;
+    Button frn6_btn;
+    Button frn7_btn;
+
 
     TextView frn1_txt;
     TextView frn2_txt;
     TextView frn3_txt;
     TextView frn4_txt;
     TextView frn5_txt;
+    TextView frn6_txt;
+    TextView frn7_txt;
 
 
 
@@ -41,12 +46,17 @@ public class FriendsActivity extends AppCompatActivity{
         frn3_btn = (Button)findViewById(R.id.frn_button3);
         frn4_btn = (Button)findViewById(R.id.frn_button4);
         frn5_btn = (Button)findViewById(R.id.frn_button5);
+        frn6_btn = (Button)findViewById(R.id.frn_button6);
+        frn7_btn = (Button)findViewById(R.id.frn_button7);
+
 
         frn1_txt = (TextView)findViewById(R.id.frn_textView1);
         frn2_txt = (TextView)findViewById(R.id.frn_textView2);
         frn3_txt = (TextView)findViewById(R.id.frn_textView3);
         frn4_txt = (TextView)findViewById(R.id.frn_textView4);
         frn5_txt = (TextView)findViewById(R.id.frn_textView5);
+        frn6_txt = (TextView)findViewById(R.id.frn_textView6);
+        frn7_txt = (TextView)findViewById(R.id.frn_textView7);
 
 
         setup_ui();
@@ -101,6 +111,25 @@ public class FriendsActivity extends AppCompatActivity{
                 }
         );
 
+        frn6_btn.setOnClickListener(
+                new Button.OnClickListener(){
+                    public void onClick(View v) {
+                        Toast toast = Toast.makeText(getApplicationContext(),frn6_txt.getText()+"에게 신청하였습니다.", Toast.LENGTH_LONG);
+                        toast.setGravity(Gravity.BOTTOM, 0, 0);
+                        toast.show();
+                    }
+                }
+        );
+
+        frn7_btn.setOnClickListener(
+                new Button.OnClickListener(){
+                    public void onClick(View v) {
+                        Toast toast = Toast.makeText(getApplicationContext(),frn7_txt.getText()+"에게 신청하였습니다.", Toast.LENGTH_LONG);
+                        toast.setGravity(Gravity.BOTTOM, 0, 0);
+                        toast.show();
+                    }
+                }
+        );
 
     }
 
@@ -110,5 +139,7 @@ public class FriendsActivity extends AppCompatActivity{
         frn3_btn.setTextSize(20);
         frn4_btn.setTextSize(20);
         frn5_btn.setTextSize(20);
+        frn6_btn.setTextSize(20);
+        frn7_btn.setTextSize(20);
     }
 }
