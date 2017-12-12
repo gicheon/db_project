@@ -71,7 +71,7 @@ public class FriendsActivity extends AppCompatActivity{
         frn1_btn.setOnClickListener(
                 new Button.OnClickListener(){
                     public void onClick(View v) {
-                        Toast toast = Toast.makeText(getApplicationContext(),frn1_txt.getText()+"에게 신청하였습니다.", Toast.LENGTH_LONG);
+                        Toast toast = Toast.makeText(getApplicationContext(),frn1_txt.getText()+"님에게 신청하였습니다.", Toast.LENGTH_LONG);
                         toast.setGravity(Gravity.BOTTOM, 0, 0);
                         toast.show();
                     }
@@ -81,7 +81,7 @@ public class FriendsActivity extends AppCompatActivity{
         frn2_btn.setOnClickListener(
                 new Button.OnClickListener(){
                     public void onClick(View v) {
-                        Toast toast = Toast.makeText(getApplicationContext(),frn2_txt.getText()+"에게 신청하였습니다.", Toast.LENGTH_LONG);
+                        Toast toast = Toast.makeText(getApplicationContext(),frn2_txt.getText()+"님에게 신청하였습니다.", Toast.LENGTH_LONG);
                         toast.setGravity(Gravity.BOTTOM, 0, 0);
                         toast.show();
                     }
@@ -91,7 +91,7 @@ public class FriendsActivity extends AppCompatActivity{
         frn3_btn.setOnClickListener(
                 new Button.OnClickListener(){
                     public void onClick(View v) {
-                        Toast toast = Toast.makeText(getApplicationContext(),frn3_txt.getText()+"에게 신청하였습니다.", Toast.LENGTH_LONG);
+                        Toast toast = Toast.makeText(getApplicationContext(),frn3_txt.getText()+"님에게 신청하였습니다.", Toast.LENGTH_LONG);
                         toast.setGravity(Gravity.BOTTOM, 0, 0);
                         toast.show();
                     }
@@ -101,7 +101,7 @@ public class FriendsActivity extends AppCompatActivity{
         frn4_btn.setOnClickListener(
                 new Button.OnClickListener(){
                     public void onClick(View v) {
-                        Toast toast = Toast.makeText(getApplicationContext(),frn4_txt.getText()+"에게 신청하였습니다.", Toast.LENGTH_LONG);
+                        Toast toast = Toast.makeText(getApplicationContext(),frn4_txt.getText()+"님에게 신청하였습니다.", Toast.LENGTH_LONG);
                         toast.setGravity(Gravity.BOTTOM, 0, 0);
                         toast.show();
                     }
@@ -111,7 +111,7 @@ public class FriendsActivity extends AppCompatActivity{
         frn5_btn.setOnClickListener(
                 new Button.OnClickListener(){
                     public void onClick(View v) {
-                        Toast toast = Toast.makeText(getApplicationContext(),frn5_txt.getText()+"에게 신청하였습니다.", Toast.LENGTH_LONG);
+                        Toast toast = Toast.makeText(getApplicationContext(),frn5_txt.getText()+"님에게 신청하였습니다.", Toast.LENGTH_LONG);
                         toast.setGravity(Gravity.BOTTOM, 0, 0);
                         toast.show();
                     }
@@ -121,7 +121,7 @@ public class FriendsActivity extends AppCompatActivity{
         frn6_btn.setOnClickListener(
                 new Button.OnClickListener(){
                     public void onClick(View v) {
-                        Toast toast = Toast.makeText(getApplicationContext(),frn6_txt.getText()+"에게 신청하였습니다.", Toast.LENGTH_LONG);
+                        Toast toast = Toast.makeText(getApplicationContext(),frn6_txt.getText()+"님에게 신청하였습니다.", Toast.LENGTH_LONG);
                         toast.setGravity(Gravity.BOTTOM, 0, 0);
                         toast.show();
                     }
@@ -131,7 +131,7 @@ public class FriendsActivity extends AppCompatActivity{
         frn7_btn.setOnClickListener(
                 new Button.OnClickListener(){
                     public void onClick(View v) {
-                        Toast toast = Toast.makeText(getApplicationContext(),frn7_txt.getText()+"에게 신청하였습니다.", Toast.LENGTH_LONG);
+                        Toast toast = Toast.makeText(getApplicationContext(),frn7_txt.getText()+"님에게 신청하였습니다.", Toast.LENGTH_LONG);
                         toast.setGravity(Gravity.BOTTOM, 0, 0);
                         toast.show();
                     }
