@@ -40,7 +40,6 @@ public class FriendsActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_friends);
-
         frn1_btn = (Button)findViewById(R.id.frn_button1);
         frn2_btn = (Button)findViewById(R.id.frn_button2);
         frn3_btn = (Button)findViewById(R.id.frn_button3);
